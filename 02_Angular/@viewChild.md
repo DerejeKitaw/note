@@ -25,3 +25,12 @@ export class AppComponent{
     }
 }
 ```
+### [@ViewChild](https://angular.io/api/core/ViewChild)
+> You can use ViewChild to get the `first element` or `the directive` __matching__ the selector from the view DOM. 
+
+> If the view DOM changes, and a new child matches the selector, the property will be updated.
+
+> View queries are set before the `ngAfterViewInit` callback is called.
+```
+ng g d ViewChild/child-directive -d
+ng g c view-child/test-view-child-directive
