@@ -5,3 +5,7 @@
 > [*ngIf](./*ngIf.md)
 
 > [custom-*ngIf](./custom-*ngIf.md)
+
+> [createEmbeddedView](./createEmbeddedView.md)
+
+> [TemplateRef](./TemplateRef.md)
