@@ -1,0 +1,17 @@
+"Input Field for Angular": {
+		"prefix": "dtk-input-field-all",
+		"body": [
+			"<div class=\"form-group\" [ngClass]=\"{'has-error': ($1.get('$2').touched || $1.get('$2').dirty) && !$1.get('$2').valid }\">",
+                    "<label class=\"col-md-2 control-label\" for=\"$2Id\">$3</label>",
+                    "<div class=\"col-md-8\">",
+                        "<input class=\"form-control\" id=\"$2Id\" type=\"text\" placeholder=\"$3 (required)\" formControlName=\"$2\" />",
+						"<span class=\"help-block\" *ngIf=\"($1.get('$2').touched || $1.get('$2').dirty) && $1.get('$2').errors\">", 
+							"<span *ngIf=\"$1.get('$2').errors.required\"> Please enter your $3. </span>",
+							"<span *ngIf=\"$1.get('$2').errors.minlength\"> The $3 must be longer than 3 characters. </span>",
+                        "</span>",
+                    "</div>",
+				"</div>",
+				"{$2: ['', [Validators.required, Validators.minLength(3)]]},",
+		],
+		"description": "input field with two validations"
+	}
