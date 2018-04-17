@@ -8,5 +8,6 @@
     },
  "emmet.syntaxProfiles": {
         "javascript":"jsx"
-    }
+    },
+    "editor.formatOnSave": true
 ```
