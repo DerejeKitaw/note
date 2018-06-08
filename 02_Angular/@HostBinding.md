@@ -1,4 +1,4 @@
-In Angular, a component `host` is the element this component is attached to. 
+> In Angular, a component `host` is the element this component is attached to. 
 We can set properties on the host element by using the @HostBinding() decorator. 
 In this case, we’re asking Angular to keep the value of the host elements class to be in sync with the property cssClass.
 
