@@ -15,6 +15,7 @@ The host is the element this component is attached to.
 Here when we say @HostBinding('attr.class') cssClass = 'row'; we’re saying that we want to attach the CSS class `row` to the host element.
 
 Using host is nice because it means we can configure our host element from within the component. This is great because otherwise we’d require the host element to specify the CSS tag and that is bad because we would then make assigning a CSS class part of the requirement to using the Component.
+
 Changing the Host’s CSS To add attributes to the host element, we use a new decorator, similar to when we listened to events on the host: the HostBinding decorator. But now, instead of specifying the event name we want to listen for, we’ll define the attribute name we want to ‘bind’ to. In this component, it looks like this:
 
 @HostBinding('attr.class') cssClass = 'ui message';
