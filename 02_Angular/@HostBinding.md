@@ -12,7 +12,10 @@ export class ProductComponent implements OnInit {
 ```
 The HostBinding decoration is new - it lets us set attributes on the host element. 
 The host is the element this component is attached to. 
-Here when we say @HostBinding('attr.class') cssClass = 'row'; we’re saying that we want to attach the CSS class `row` to the host element.
+
+Here when we say @HostBinding('attr.class') cssClass = 'row'; 
+
+we’re saying that we want to attach the CSS class `row` to the host element. Eg. `<app-product></app-product>` class="row" will be injucted to `app-product` using @HostBinding
 
 Using host is nice because it means we can configure our host element from within the component. This is great because otherwise we’d require the host element to specify the CSS tag and that is bad because we would then make assigning a CSS class part of the requirement to using the Component.
 
