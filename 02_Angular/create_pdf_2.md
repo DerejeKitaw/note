@@ -28,6 +28,38 @@ export class AppComponent {
 }
 
 ```
+for image
+```ts
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Inject,
+  OnInit
+} from "@angular/core";
+import * as jsPDF from "jspdf";
+import * as Html2Canvas from "html2canvas";
+
+@Component({
+  selector: "app-print-pdf",
+  templateUrl: "./print-pdf.component.html",
+  styleUrls: ["./print-pdf.component.css"]
+})
+export class PrintPdfComponent implements OnInit {
+  ngOnInit(): void {}
+  @ViewChild("content") content: ElementRef;
+  public downloadPDF() {
+    Html2Canvas(this.content.nativeElement, <Html2Canvas.Html2CanvasOptions>{
+      onrendered: function(canvas: HTMLCanvasElement) {
+        var pdf = new jsPDF("p", "pt", "a4");
+        var img = canvas.toDataURL("image/png");
+        pdf.addImage(img, "PNG", 10, 10, 580, 300);
+        pdf.save("web.pdf");
+      }
+    });
+  }
+}
+```
 app.html
 ```html
 
