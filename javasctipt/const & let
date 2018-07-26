@@ -1,0 +1,9 @@
+const and let - can not redefine like var
+
+> const name ='Dereje'
+> const name ='Winta' - wrong
+> const name ='kitaw' - wrong
+
+> let adress ='123'
+> let adress ='345' - wrong but can assign new value
+> > ladress ='789'
