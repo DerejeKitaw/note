@@ -1,0 +1,7 @@
+>  @RestController annotation
+* Is known as a stereotype annotation. 
+* Provides hints for people reading the code and 
+* For Spring that the class plays a specific role. 
+* class defined by @RestController is a web @Controller, so Spring considers it when handling incoming web requests.
+* Tells Spring to render the resulting string directly back to the caller.
+* Is Spring MVC annotations.
