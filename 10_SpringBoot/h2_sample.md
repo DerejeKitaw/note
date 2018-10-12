@@ -50,3 +50,4 @@ spring.h2.console.enabled=true
 spring.datasource.platform=h2
 spring.datasource.url=jdbc:h2:mem:dtk
 ```
+![h2_console](https://github.com/DerejeKitaw/note/blob/master/data/h2_1.png)
