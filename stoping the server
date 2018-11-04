@@ -1,0 +1,25 @@
+Get error:
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+I fix the problem by using different port number.
+was:
+const port = process.env.PORT || 5000;
+changed to:
+const port = process.env.PORT || 6000;
+
+Hope will help some one.
+**Or**
+
+Get the PID using lsof
+
+    $ lsof -Pi | grep LISTEN
+
+
+node      57096  (LISTEN)
+
+then 
+
+$ kill -9 57096
+
+run the server. 
