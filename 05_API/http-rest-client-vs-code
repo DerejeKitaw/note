@@ -1,0 +1,30 @@
+
+@baseUrl = http://localhost:5000/api
+# @name login
+POST {{baseUrl}}/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+"email":"emailwinta@gmail.com",
+"password":"123456"
+}
+###
+
+@authToken = {{login.response.body.token}}
+
+###
+POST {{baseUrl}}/inverters
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "inverterManufacturer": "SOLAREDGE",
+    "inverterType": "SE3000A - US",
+    "maxDcVoltage": "500",
+    "maxPowerOutput": "3000",
+    "acOutputVoltage": "240",
+    "maxAcCurrentOutput": "32",
+    "startupVoltage": "cec: 97.5",
+    "cec": "97.5",
+    "date": "2018-11-04T03:40:27.523Z"
+}
