@@ -1,0 +1,12 @@
+@page {
+  size: A3;
+  margin: 0;
+}
+@media print {
+  @page {size: landscape}
+  html, body {
+    height: 1224;
+    width: 792;
+  }
+  /* ... the rest of the rules ... */
+}
