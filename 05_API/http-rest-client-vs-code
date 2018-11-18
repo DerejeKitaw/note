@@ -8,8 +8,8 @@ Content-Type: application/json
 "email":"emailwinta@gmail.com",
 "password":"123456"
 }
-###
 
+###
 @authToken = {{login.response.body.token}}
 
 ###
