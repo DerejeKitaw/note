@@ -42,6 +42,7 @@ export const reducers: ActionReducerMap<State> = {
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
 
 ```
+![ngrx](./doc/ngrx_1.png)
 ## Define action
 ```
 ng generate action auth/Auth
