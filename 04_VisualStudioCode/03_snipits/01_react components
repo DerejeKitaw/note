@@ -1,0 +1,22 @@
+"React component with context": {
+    "prefix": "dWithContextclassReactComponent",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { compose } from 'recompose';",
+      "import { withContext } from '../../context';",
+      "                               ",
+      "class ${TM_FILENAME_BASE} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        <h3>${TM_FILENAME_BASE}</h3>",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+
+      "export default compose(withContext)(${TM_FILENAME_BASE});",
+      ""
+    ],
+    "description": "React component"
+  }
