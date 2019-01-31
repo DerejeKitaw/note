@@ -3,4 +3,4 @@ git remote -v
 
 
 ### To remove
-git remote origion
+git remote rm origion
