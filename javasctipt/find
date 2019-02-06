@@ -1,0 +1,6 @@
+> rentals is an array with id= number
+```js
+export const fetchRentalById = rentalId => {
+const rental = rentals.find(rental => rental.id.toString() === rentalId);
+}
+```
