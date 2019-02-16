@@ -1,3 +1,4 @@
+  ```json
   "React component": {
     "prefix": "dclassReactComponent",
     "body": [
@@ -18,3 +19,4 @@
     ],
     "description": "React component"
   },
+```
