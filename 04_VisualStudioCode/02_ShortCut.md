@@ -16,3 +16,6 @@ If you prefer to switch back to indentation based folding for one (or all) of th
     "editor.foldingStrategy": "indentation"
   },
 ```
+```
+⌘D selects the word at the cursor
+```
