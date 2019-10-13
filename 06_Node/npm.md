@@ -25,6 +25,7 @@ npm i mongoose@2.4.3
 To compare or see outdated dependencies
 ```
 npm outdated
+np, outdated -g
 ```
 
 ```
