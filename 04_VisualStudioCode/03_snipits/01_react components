@@ -19,4 +19,25 @@
       ""
     ],
     "description": "React component"
-  }
+  },
+  
+  
+  "React class component": {
+		"prefix": "drcc",
+		"body": [
+			"import React, { Component } from 'react';",
+			"",
+			"class ${TM_FILENAME_BASE} extends Component {",
+			"    render() {",
+			"        return (",
+			"            <div>",
+			"                ${TM_FILENAME_BASE} component",
+			"            </div>",
+			"        );",
+			"    }",
+			"}",
+			"",
+			"export default Counters;",
+		],
+		"description": "React class component"
+	}
