@@ -40,4 +40,18 @@
 			"export default ${TM_FILENAME_BASE};",
 		],
 		"description": "React class component"
+	},
+	"React functional component": {
+		"prefix": "drfc",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"const ${TM_FILENAME_BASE} = props => {",
+			"  <div>${TM_FILENAME_BASE}</div>;",
+			"};",
+			"",
+			"export default MoviesTable;",
+			""
+		],
+		"description": "React class component"
 	}
