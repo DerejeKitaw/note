@@ -1,0 +1,6 @@
+> docker version
+> docker info
+    most config values of engin
+> docker <command>(option)  old(still works)
+> docker <command> <sub-command> (options) new
+> docker container run --publish 80:80 nginx
