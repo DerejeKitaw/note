@@ -3,9 +3,11 @@
 > docker info
     most config values of engin
     
-> docker <command>(option)  old(still works)
+> docker `<command>`(option)  old(still works)
 
-> docker <command> <sub-command> (options) new
+> docker `<Management Commands> <sub-command>` (options) new
+
+![docker_composer](/data/04_docker.png)
 
 C:\Program Files\Docker Toolbox
 
