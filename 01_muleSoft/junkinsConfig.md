@@ -50,8 +50,8 @@ jenkins - >  World clock build ->  Build -> Command "mvn clean install"
       <objectStoreV2>true</objectStoreV2>
         <muleVersion>4.3.0</muleVersion>
         <!-- Deploy User Parameter -->
-        <username>merkeb_yemane3</username>
-        <password>Eliab@2015</password>
+        <username>${anypoint.username}</username>
+        <password>${anypoint.password}</password>
         <!-- Environment Parameter -->
         <environment>Sandbox</environment>
         <applicationName>world-clock-api</applicationName>
