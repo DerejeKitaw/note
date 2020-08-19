@@ -1,0 +1,3 @@
+> [Resource](https://sharepoint.stackexchange.com/questions/19398/sp-2010-is-it-possible-to-set-permissions-at-content-type-level)
+
+> You can do this with SharePoint Designer List Workflows using an Impersonation Step. In the Impersonation Step you can alter permissions of an item in the list. First check the valule of the Content type in the current list. If the value of the content type is "Manager CT" create an impersonation step and change your permissions. Choose the action "Replace List Item Permissions" and set the new permissions on the item. Remember that you need to re-grant permission for every group because the action "Replace List Item Permissions" removes all permission that are exisiting.
