@@ -1,5 +1,11 @@
-Shift + comand + right or left arow to select to the end of line
+Shift + command + right or left arrow to select to the end of line
 Shift + Alt + Tab --to select words
+
+alt + command right or left arrow to switch between opened file in vs code
+
+alt + right or left arrow to move curser one word at a time
+
+alt + delete will delete like backspace in window
 
 Install htmltagwrap and Option or alt + w to add html tag
 
@@ -16,6 +22,7 @@ If you prefer to switch back to indentation based folding for one (or all) of th
     "editor.foldingStrategy": "indentation"
   },
 ```
+
 ```
 ⌘D selects the word at the cursor
 ```
