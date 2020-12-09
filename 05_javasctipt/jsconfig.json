@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src
+  },
+  "include": ["src"]
+}
+// import Todo from "../../component/Todo
+// will be 
+// import from "component/Todo
