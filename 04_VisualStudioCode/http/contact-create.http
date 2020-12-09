@@ -1,0 +1,36 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+####
+// @route    POST api/auth
+// @desc     Authenticate user & get token
+// @access   Public
+# @name login
+POST {{host}}/api/auth HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+
+# ------------------------------------------------------
+###
+// @route    POST api/contacts
+// @desc     Create a contact
+// @access   Private
+POST {{host}}/api/contacts HTTP/1.1
+content-type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "name":"Dereje",
+    "type":"personal"
+}

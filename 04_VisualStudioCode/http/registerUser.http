@@ -1,0 +1,19 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+// @route    POST api/users
+// @desc     Register user
+// @access   Public
+POST {{host}}/api/users HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
