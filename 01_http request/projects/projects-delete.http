@@ -1,0 +1,29 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+
+// @desc    Delete a project
+// @route   DELETE /api/projects/:id
+// @access  Private/Admin
+###
+DELETE  {{host}}/api/projects/5fd4338ce344a18538e96f10 HTTP/1.1
+authorization:  Bearer {{authToken}}

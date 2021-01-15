@@ -1,0 +1,52 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Create a panel
+// @route   POST /api/panels
+// @access  Private/Admin
+###
+POST {{host}}/api/panels HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "panelType":"REC370",
+    "power":370,
+    "vmp":37.4,
+    "imp":9.9,
+    "voc":44.10,
+    "isc":10.55,
+    "vocTempCoef":0.28,
+    "vmpTempCoef":0.28,
+    "iscTempCoef":0.28,
+    "maxSystemVoltage":1000
+}
+
+
+
+
+###
+// @desc    Fetch all panels
+// @route   GET /api/panels
+// @access  Public
+GET {{host}}/api/panels HTTP/1.1
+authorization:  Bearer {{authToken}}

@@ -1,0 +1,57 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Update a project
+// @route   PUT /api/projects/:id
+// @access  Private/Admin
+###
+PUT {{host}}/api/projects/5fd5958ef1bfaa33f8147ef3 HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+"panel": "5fd67f8dc746df78cb2e2ec9"
+}
+
+// @desc    Update a project
+// @route   PUT /api/projects/:id
+// @access  Private/Admin
+###
+PUT {{host}}/api/projects/5fd5958ef1bfaa33f8147ef3 HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+"unFusedDisconnectRequired": false
+}
+
+
+
+###
+// @desc    Fetch all projects
+// @route   GET /api/projects
+// @access  Public
+GET {{host}}/api/projects HTTP/1.1
+authorization:  Bearer {{authToken}}
+
+
+

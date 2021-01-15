@@ -1,0 +1,40 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Create a project
+// @route   POST /api/projects
+// @access  Private/Admin
+###
+POST {{host}}/api/projects HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "id": "1",
+    "nameOnDrawing": "Dereje Kitaw",
+    "jobNumber": "8982",
+    "dateOnDrawing": "12/12/2020",
+    "drawnBy": "DTK",
+    "address1": "123 Main Street",
+    "address2": "Silver Spring MD 20904"
+}
+

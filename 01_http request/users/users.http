@@ -1,0 +1,44 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+
+// @desc    Get user profile
+// @route   GET /api/users/profile
+// @access  private
+###
+GET {{host}}/api/users/profile HTTP/1.1
+authorization:  Bearer {{authToken}}
+
+// @desc    Update user profile
+// @route   PUT /api/users/profile
+// @access  private
+###
+PUT {{host}}/api/users/profile HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "name":"Dere",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+

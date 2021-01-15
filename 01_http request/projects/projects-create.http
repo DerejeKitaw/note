@@ -1,0 +1,61 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Create a project
+// @route   POST /api/projects
+// @access  Private/Admin
+###
+POST {{host}}/api/projects HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+"nameOnDrawing": "Winta Kitaw",
+"jobNumber": "8982",
+"dateOnDrawing": "12/12/2020",
+"drawnBy": "DTK",
+"address1": "123 Main Street",
+"address2": "Silver Spring MD 20904",
+"numberOfModulesString1": 10,
+"numberOfModulesString2": 10,
+"numberOfModulesString3": 10,
+"numberOfModulesString4": 0,
+"numberOfModulesString5": 0,
+"loadCenterSize": 100,
+"envoyFuseSize": 15,
+"inverter": "5fd59557f1bfaa33f8147ef1",
+"panel": "5fd59576f1bfaa33f8147ef2",
+"mainServicePanelBreakerSize": 200
+}
+
+// @desc    Create a project
+// @route   POST /api/projects
+// @access  Private/Admin
+###
+POST {{host}}/api/projects HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+"nameOnDrawing": "Winta Kitaw",
+"jobNumber": "8988"
+}

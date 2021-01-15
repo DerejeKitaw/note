@@ -1,0 +1,79 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Create a inverter
+// @route   POST /api/inverters
+// @access  Private/Admin
+###
+POST {{host}}/api/inverters HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "inverterManufacturer": "enphase",
+    "inverterType": "IQ7A-72-2-US",
+    "maxDcVoltage": 58,
+    "maxPowerOutput": 295,
+    "acOutputVoltage": 240,
+    "maxAcCurrentOutput": 1.45,
+    "startupVoltage": 0,
+    "cec": 97.5
+}
+
+
+// @desc    Create a inverter
+// @route   POST /api/inverters
+// @access  Private/Admin
+###
+POST {{host}}/api/inverters HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "inverterManufacturer": "inphase",
+    "inverterType": "IQ7pluss-60-2-US",
+    "maxDcVoltage": 60,
+    "maxPowerOutput": 250,
+    "acOutputVoltage": 240,
+    "maxAcCurrentOutput":1.21,
+    "startupVoltage": 0,
+    "cec": 97.5
+}
+// @desc    Create a inverter
+// @route   POST /api/inverters
+// @access  Private/Admin
+###
+POST {{host}}/api/inverters HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+    "inverterManufacturer": "inphase",
+    "inverterType": "IQ7Aplus-60-2-US",
+    "maxDcVoltage": 65,
+    "maxPowerOutput": 250,
+    "acOutputVoltage": 240,
+    "maxAcCurrentOutput":1.21,
+    "startupVoltage": 0,
+    "cec": 97.5
+}
+

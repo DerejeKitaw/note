@@ -1,0 +1,46 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+// @desc    Update a inverter
+// @route   PUT /api/inverters/:id
+// @access  Private/Admin
+###
+PUT {{host}}/api/inverters/5fd43bbc1399fa05093246a6 HTTP/1.1
+content-type: application/json
+authorization:  Bearer {{authToken}}
+
+{
+     "inverterManufacturer": "SOLAREDGE",
+      "inverterType": "SE3800A - US",
+      "maxPowerOutput": 3800,
+      "acOutputVoltage": 240,
+      "maxAcCurrentOutput": 21,
+      "startupVoltage": 0,
+      "cec": 97.5
+}
+
+###
+// @desc    Fetch all inverters
+// @route   GET /api/inverters
+// @access  Public
+GET {{host}}/api/inverters HTTP/1.1
+authorization:  Bearer {{authToken}}

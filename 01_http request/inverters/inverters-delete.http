@@ -1,0 +1,37 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+
+// @desc    Delete inverter
+// @route   DELETE /api/inverter/:id
+// @access  Private/Admin
+###
+DELETE  {{host}}/api/inverters/5fd436d38479eb01211fa294 HTTP/1.1
+authorization:  Bearer {{authToken}}
+
+
+###
+// @desc    Fetch all inverters
+// @route   GET /api/inverters
+// @access  Public
+GET {{host}}/api/inverters HTTP/1.1
+authorization:  Bearer {{authToken}}

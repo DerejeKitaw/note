@@ -9,3 +9,8 @@ Find PID of mongod process using $ top
 
 Kill the process by $ kill <PID>
 ```
+
+### mongodb localhost connection
+```
+
+```

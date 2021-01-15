@@ -1,0 +1,29 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+###
+@authToken = {{login.response.body.token}}
+
+
+// @desc    Auth user & get token
+// @route   POST /api/users/login
+// @access  Public
+####
+# @name login
+POST {{host}}/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Dereje",
+    "email":"d@gmail.com",
+    "password":"Dereje"
+}
+
+
+// @desc    Fetch single project
+// @route   GET /api/projects/:id
+// @access  Public
+###
+GET  {{host}}/api/projects/5fd592c3f1bfaa33f8147eef HTTP/1.1
+authorization:  Bearer {{authToken}}
