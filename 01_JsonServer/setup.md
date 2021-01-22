@@ -2,7 +2,7 @@
 ```
 npm i json-server -D
 ```
-
+ 
 ### set server
 ```js
 // server.js
