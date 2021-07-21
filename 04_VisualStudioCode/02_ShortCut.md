@@ -26,3 +26,8 @@ If you prefer to switch back to indentation based folding for one (or all) of th
 ```
 ⌘D selects the word at the cursor
 ```
+> Check http://blog.jetbrains.com/idea/2014/03/intellij-idea-13-1-rc-introduces-sublime-text-style-multiple-selections/
+
+> Select next occurrence: Alt + J (Ctrl + G for Mac OS X)
+
+> Unselect next occurrence: Shift + Alt + J (Shift + Ctrl + G for Mac OS X)
