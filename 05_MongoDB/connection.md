@@ -14,3 +14,15 @@ Kill the process by $ kill <PID>
 ```
 
 ```
+
+### MongoDB password with “@” in it (For MongoDB compass)
+```
+// use %40 for @ 
+// Example p@me for p%40me
+mongoClient.connect("mongodb://username:p%40me@host:port/dbname?authSource=admin", { 
+        useNewUrlParser: true
+    }, function(err, db) {
+
+    }
+);
+```
