@@ -2,3 +2,7 @@
 ```
 sudo -i
 ```
+> To see file structure
+```
+tree .
+```
