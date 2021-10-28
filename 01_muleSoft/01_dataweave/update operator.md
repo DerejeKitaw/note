@@ -19,8 +19,8 @@ payload update {
 }
 ```
 > return
-> ```json
-> {
+```json
+{
   "package": "org.acme.runtime",
   "class": "SomeTestCase",
   "name": "validateStatus",
