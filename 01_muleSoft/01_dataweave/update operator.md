@@ -12,19 +12,19 @@
 ```
 %dw 2.0
 output application/json
-var assigne = "assignee"
 ---
+
 payload update {
-       case .assignee ->  "a"
+       case .assignee ->  "updated value"
 }
 ```
 > return
 ```json
 {
-  "package": "org.acme.runtime",
+  "package": "org.dtk",
   "class": "SomeTestCase",
   "name": "validateStatus",
   "age": 5,
-  "assignee": "a"
+  "assignee": "updated value"
 }
 ```
