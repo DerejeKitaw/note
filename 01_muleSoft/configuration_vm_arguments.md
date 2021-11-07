@@ -1,0 +1,2 @@
+-Dsecure.key=
+-Danypoint.platform.gatekeeper=disabled
