@@ -12,3 +12,13 @@ result.status match{
 ```json
 {"message": "Please try again later."}
 ```
+
+### can be used to et default value
+```
+var remoteEntityName = attributes.entitySetName match {
+	case remoteEntityName is String -> remoteEntityName
+	else -> ""	
+}
+```
+
+> Return empty string if `remoteEntityName` is not string
