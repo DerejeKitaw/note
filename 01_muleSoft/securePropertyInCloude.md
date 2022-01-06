@@ -9,3 +9,16 @@ mule-artifact.json
   "minMuleVersion": "4.4.0",
   "secureProperties": ["key.inc"]
 }
+```
+
+> Common properties that need to be hidden
+mule-artifact.json
+```json
+{
+  "minMuleVersion": "4.4.0",
+  "secureProperties": [
+  "key.inc",
+  "anypoint.platform.client_id",
+  "anypoint.platform.client_secrete"
+  ]
+}
