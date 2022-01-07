@@ -118,7 +118,10 @@ FROM Account
     }
 ]
 ```
-
+> To get all fields
+```
+SELECT FIELDS(ALL) FROM Contact
+```
 ```
 SELECT FIELDS(STANDARD) FROM Contact
 ```
