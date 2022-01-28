@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>YOUR ORG ID</groupId>
+    <artifactId>your-mule-parent-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>your-mule-parent-pom</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+        <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
+        <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
+        <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
+        <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <jdk.version>1.8</jdk.version>
+
+        <!-- Mule connectors. -->
+        <mule-vm-connector.version>2.0.0</mule-vm-connector.version>
+        <mule-objectstore-connector.version>1.1.5</mule-objectstore-connector.version>
+        <mule-db-connector.version>1.8.2</mule-db-connector.version>
+        <mule-http-connector.version>1.5.23</mule-http-connector.version>
+        <mule-sockets-connector.version>1.2.0</mule-sockets-connector.version>
+        <mule-wsc-connector.version>1.6.1</mule-wsc-connector.version>
+        <mule-cloudhub-connector.version>1.0.1</mule-cloudhub-connector.version>
+        <mule-file-connector.version>1.3.2</mule-file-connector.version>
+        <mule-salesforce-connector.version>10.3.1</mule-salesforce-connector.version>
+        <mule-ftp-connector.version>1.5.2</mule-ftp-connector.version>
+        <mule-sftp-connector.version>1.3.8</mule-sftp-connector.version>
+
+        <!-- Mule Modules. -->
+        <mule-java-module.version>1.2.6</mule-java-module.version>
+        <mule-spring-module.version>1.3.3</mule-spring-module.version>
+        <mule-secure-configuration-property-module.version>1.2.3</mule-secure-configuration-property-module.version>
+        <mule-apikit-module.version>1.3.14</mule-apikit-module.version>
+        <mule-validation-module.version>1.4.0</mule-validation-module.version>
+        <mule-xml-module.version>1.1.0</mule-xml-module.version>
+        <mule-soapkit-module.version>1.2.7</mule-soapkit-module.version>
+        <mule-scripting-module.version>2.0.0</mule-scripting-module.version>
+        <mule-compression-module.version>2.1.1</mule-compression-module.version>
+
+        <!-- Anypoint Org ID.-->
+        <anypoint.org.id>YOUR ORG ID</anypoint.org.id>
+
+        <!-- Runtime -->
+        <app.runtime>4.3.0</app.runtime>
+        <mule.maven.plugin.version>3.4.1</mule.maven.plugin.version>
+        <munit.version>2.3.0</munit.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>p12</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>crt</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven.install.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven.clean.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven.release.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.mule.tools.maven</groupId>
+                <artifactId>mule-maven-plugin</artifactId>
+                <version>${mule.maven.plugin.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>com.mulesoft.munit.tools</groupId>
+                <artifactId>munit-maven-plugin</artifactId>
+                <version>${munit.version}</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                            <goal>coverage-report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <coverage>
+                        <runCoverage>true</runCoverage>
+                        <formats>
+                            <format>html</format>
+                        </formats>
+                    </coverage>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven.resources.plugin.version}</version>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!-- Maven Filtering. -->
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/mule</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <!-- Mule Dependencies -->
+    <dependencies>
+        <!-- Mule Connectors. -->
+        <dependency>
+            <groupId>org.mule.connectors</groupId>
+            <artifactId>mule-http-connector</artifactId>
+            <version>${mule-http-connector.version}</version>
+            <classifier>mule-plugin</classifier>
+        </dependency>
+
+        <!-- Mule Modules. -->
+        <dependency>
+            <groupId>com.mulesoft.modules</groupId>
+            <artifactId>mule-secure-configuration-property-module</artifactId>
+            <version>${mule-secure-configuration-property-module.version}</version>
+            <classifier>mule-plugin</classifier>
+        </dependency>
+
+        <!-- MUnit. -->
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-runner</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-tools</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>your-anypoint-exchange</id>
+            <name>Your Anypoint Exchange Repository</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v2/organizations/${anypoint.org.id}/maven</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>anypoint-exchange-v2</id>
+            <name>Anypoint Exchange Repository</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>https://repository.mulesoft.org/releases/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mulesoft-releases</id>
+            <name>mulesoft release repository</name>
+            <layout>default</layout>
+            <url>https://repository.mulesoft.org/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <!-- Target Anypoint Organization Repository -->
+        <repository>
+            <id>your-anypoint-exchange</id>
+            <name>Your Anypoint Exchange Repository</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v2/organizations/${anypoint.org.id}/maven</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
+</project>
