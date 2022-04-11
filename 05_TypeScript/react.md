@@ -15,3 +15,4 @@ export const MyComponent2 = (props: Props2) => {
   return <span>{props.id}</span>
 }
 ```
+> The best tool for creating React + TS libraries right now is [tsdx](https://github.com/jaredpalmer/tsdx). Run npx tsdx create and select the "react" option.
