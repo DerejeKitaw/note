@@ -1,3 +1,4 @@
+### How to define custome data type
 ```dw
 %dw 2.0
 output application/json
