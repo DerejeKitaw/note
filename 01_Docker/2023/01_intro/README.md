@@ -63,6 +63,14 @@ docker stop NAME_OF_CONTAINER
 ```
 docker rm NAME_OF_CONTAINER
 ```
+## How to `delete` images
+```
+docker rm IMAGE_ID
+```
+> To remove all unused images
+```
+docker prune
+```
 ## How to create an image using Dockerfile
 ```Dockerfile
 FROM node:14
