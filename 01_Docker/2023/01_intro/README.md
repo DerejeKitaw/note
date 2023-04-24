@@ -292,3 +292,8 @@ $ docker logs -f 72c4eb254c2c
 1 week
 6 month
 ```
+## Entering interactive mode
+```
+docker run -it
+docker start -ai
+```
