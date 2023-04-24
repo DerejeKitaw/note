@@ -166,4 +166,36 @@ yes -->logs
 yes -->logs
 ```
 > Check http://localhost:3000/
+```bash
+dkitaw@DESKTOP(master)
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
+a5bebc1bb303   2a5f4510de1b   "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   0.0.0.0:3000->80/tcp   dreamy_hoover
+
+dkitaw@DESKTOP(master)
+$ docker stop dreamy_hoover
+dreamy_hoover
+dkitaw@DESKTOP(master)
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+dkitaw@DESKTOP(master)
+$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                        PORTS     NAMES
+1408f9079807   2a5f4510de1b   "docker-entrypoint.s…"   20 minutes ago   Exited (137) 16 minutes ago             modest_mendel      
+
+dkitaw@DESKTOP(master)
+$ docker rm modest_mendel
+modest_mendel
+
+dkitaw@DESKTOP(master)
+$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+dkitaw@DESKTOP(master)
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+<none>       <none>    2a5f4510de1b   26 minutes ago   917MB
+node         latest    07f4e626c252   3 days ago       1GB
+```
 ## How
