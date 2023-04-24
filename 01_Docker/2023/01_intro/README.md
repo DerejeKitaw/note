@@ -198,4 +198,97 @@ REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
 <none>       <none>    2a5f4510de1b   26 minutes ago   917MB
 node         latest    07f4e626c252   3 days ago       1GB
 ```
-## How
+## Underestanding Attached vs detached container
+> For docker start - detached mode is the default use -a to attache
+> For docker run - atached mode is the default use -d to detach
+```bash
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+<none>       <none>    2a5f4510de1b   26 minutes ago   917MB
+node         latest    07f4e626c252   3 days ago       1GB
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker run -p 8000:80 -d 2a5f4510de1b
+72c4eb254c2c0ce322065d73fbdc4dc44b6fd1904dd1b7461413f971bbca56e0
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ sdocker ps
+bash: sdocker: command not found
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                  NAMES
+72c4eb254c2c   2a5f4510de1b   "docker-entrypoint.s…"   43 seconds ago   Up 42 seconds   0.0.0.0:8000->80/tcp   epic_galois
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker stop 72c4eb254c2c
+72c4eb254c2c
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker start 72c4eb254c2c
+72c4eb254c2c
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS          PORTS                  NAMES
+72c4eb254c2c   2a5f4510de1b   "docker-entrypoint.s…"   2 minutes ago   Up 12 seconds   0.0.0.0:8000->80/tcp   epic_galois
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker stop 72c4eb254c2c
+72c4eb254c2c
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker start -a 72c4eb254c2c
+3 week
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker start 72c4eb254c2c
+72c4eb254c2c
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker logs 72c4eb254c2c
+
+3 week
+2 week
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker logs 72c4eb254c2c
+
+3 week
+2 week
+1 week
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker logs -a 72c4eb254c2c
+unknown shorthand flag: 'a' in -a
+See 'docker logs --help'.
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker logs --help
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --since string   Show logs since timestamp (e.g.
+                       2013-01-02T13:23:37Z) or relative (e.g. 42m for 42
+                       minutes)
+  -n, --tail string    Number of lines to show from the end of the logs
+                       (default "all")
+  -t, --timestamps     Show timestamps
+      --until string   Show logs before a timestamp (e.g.
+                       2013-01-02T13:23:37Z) or relative (e.g. 42m for 42
+                       minutes)
+
+dkitaw@DESKTOP-LL95T6B MINGW64 /c/Doc/Git Projects/note/01_Docker/2023/01_intro (master)
+$ docker logs -f 72c4eb254c2c
+
+3 week
+2 week
+1 week
+6 month
+```
