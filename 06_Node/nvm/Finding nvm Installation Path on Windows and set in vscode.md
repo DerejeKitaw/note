@@ -30,3 +30,35 @@ Then verify:
 ```
 nvm list
 ```
+Git Bash inside **VS Code** isn't picking up the Windows environment variable `NVM_HOME`. This happens because **Git Bash doesn't automatically inherit Windows system variables** like Command Prompt does.
+
+**Fix: Manually Set `NVM_HOME` in Git Bash**
+
+Try running:
+```
+export NVM\_HOME="/c/Users/dkita/AppData/Local/nvm" export PATH="$NVM\_HOME:$PATH"
+```
+Then check:
+```
+echo $NVM\_HOME
+```
+**Permanent Fix: Add to `~/.bashrc`**
+
+1.  Open your `~/.bashrc` file in VS Code:
+```
+nano ~/.bashrc
+```
+5.  Add these lines at the bottom:
+
+export NVM\_HOME="/c/Users/dkita/AppData/Local/nvm" export PATH="$NVM\_HOME:$PATH"
+
+9.  Save the file and reload:
+```
+source ~/.bashrc
+```
+**Restart VS Code & Test**
+
+-   Close **VS Code**, reopen Git Bash, and run:
+```
+echo $NVM\_HOME nvm list
+```
