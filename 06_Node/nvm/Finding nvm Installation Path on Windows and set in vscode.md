@@ -22,7 +22,9 @@ This is the directory where `nvm` is installed.
 
 If you need to use `nvm` inside Git Bash or VS Code, set the path manually:
 
-export NVM\_DIR="/c/Users/YourUsername/AppData/Local/nvm" export PATH="$NVM\_DIR:$PATH"
+```
+export PATH="/c/Users/dkita/AppData/Local/nvm:$PATH"
+```
 
 Then verify:
 ```
