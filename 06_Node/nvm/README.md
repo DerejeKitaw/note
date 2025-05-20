@@ -1,3 +1,4 @@
+[New way](https://www.geeksforgeeks.org/how-to-install-and-use-nvm-on-windows/)
 ## 01_Install [nvm](https://github.com/creationix/nvm#install-script)
 ```
 Install script
