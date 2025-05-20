@@ -1,4 +1,4 @@
- **Finding `nvm` Installation Path on Windows**
+### **Finding `nvm` Installation Path on Windows**
 
 **1️⃣ Open Command Prompt**
 
@@ -30,7 +30,7 @@ Then verify:
 ```
 nvm list
 ```
-Git Bash inside **VS Code** isn't picking up the Windows environment variable `NVM_HOME`. This happens because **Git Bash doesn't automatically inherit Windows system variables** like Command Prompt does.
+### Git Bash inside **VS Code** isn't picking up the Windows environment variable `NVM_HOME`. This happens because **Git Bash doesn't automatically inherit Windows system variables** like Command Prompt does.
 
 **Fix: Manually Set `NVM_HOME` in Git Bash**
 
@@ -61,4 +61,38 @@ source ~/.bashrc
 -   Close **VS Code**, reopen Git Bash, and run:
 ```
 echo $NVM\_HOME nvm list
+```
+### If `NVM_SYMLINK` works in **Command Prompt** but not in **VS Code's Git Bash**, it means Git Bash isn't inheriting your Windows environment variables correctly. Here's how you can fix it:
+
+**1️⃣ Manually Set the Variable in Git Bash**
+
+Try running:
+```
+export NVM\_SYMLINK="/c/nvm4w/nodejs" export PATH="$NVM\_SYMLINK:$PATH"
+```
+Then verify:
+```
+echo $NVM\_SYMLINK nvm list
+```
+**2️⃣ Make It Permanent in `~/.bashrc`**
+
+To avoid setting it manually every time:
+
+1.  Open `~/.bashrc` in VS Code:
+```
+nano ~/.bashrc
+```
+5.  Add these lines at the bottom:
+
+export NVM\_SYMLINK="/c/nvm4w/nodejs" export PATH="$NVM\_SYMLINK:$PATH"
+
+9.  Save and reload:
+```
+source ~/.bashrc
+```
+**3️⃣ Restart VS Code & Test Again**
+
+Close **VS Code**, reopen Git Bash, and check:
+```
+echo $NVM\_SYMLINK node -v
 ```
