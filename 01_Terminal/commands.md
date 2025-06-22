@@ -6,3 +6,8 @@ sudo -i
 ```
 tree .
 ```
+> To create multiple file at a time
+```
+mkdir -p src/components/Sidebar
+touch src/components/Sidebar/{Properties,LayersPanel,ZoomPanel}.tsx
+```
