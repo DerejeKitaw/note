@@ -66,3 +66,9 @@ Windows License valid for 180 days
 - Once all rearm counts have been consumed, the evaluation period can no longer be extended using this method.
 - At that point, the VM must either be activated with a valid Windows Server license or replaced/rebuilt with a new development image.
 - This process affects only the Windows operating system and does not impact the Dynamics 365 Finance & Operations application, database, or development artifacts.
+- <img width="382" height="109" alt="image" src="https://github.com/user-attachments/assets/3595dabc-145f-4acb-ba57-66ba43a5328d" />
+<img width="2558" height="1199" alt="image" src="https://github.com/user-attachments/assets/7b31f274-2a3c-42b8-b74a-b199143e6f93" />
+<img width="1489" height="654" alt="image" src="https://github.com/user-attachments/assets/185b6295-1b9e-44dc-b3b5-757e99e68e63" />
+
+
+
